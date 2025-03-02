@@ -52,12 +52,14 @@ const Sidebar = () => {
         </button>
 
         {/* Profile Section */}
-        <div className="flex flex-col items-center my-5">
+        <div className="flex flex-row justify-around my-5">
           <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
             <span className="text-xl font-bold">H</span>
           </div>
+          <div className="flex flex-col">
           <h2 className="text-lg font-semibold mt-2">Hunk</h2>
           <p className="text-gray-500 text-sm">+91 123456789</p>
+          </div>
         </div>
 
         {/* Navigation Items */}
