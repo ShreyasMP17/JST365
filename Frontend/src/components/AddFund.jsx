@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
+import { useNavigate } from "react-router-dom";
 
 const AddFund = () => {
   const [amount, setAmount] = useState("");
@@ -13,12 +16,21 @@ const AddFund = () => {
     setAmount(value);
   };
 
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-tr from-gray-100 to-gray-50 px-4 py-6">
+    <div className="">
+      <Header/>
+    <div className="py-24 min-h-screen flex flex-col items-center bg-gradient-to-tr from-gray-100 to-gray-50 px-4 ">
       {/* Header */}
-      <div className="w-full flex items-center justify-start mb-4">
-        <ArrowLeft className="text-gray-700 cursor-pointer" size={24} />
-        <h2 className="ml-2 text-lg font-semibold text-gray-800">ADD FUND</h2>
+      <div className="w-full text-center mb-4">
+        {/* Clickable Arrow Button */}
+      <ArrowLeft
+        className="text-gray-700  cursor-pointer hover:text-gray-900 transition"
+        size={32}
+        onClick={() => navigate(-1)} // Go back to previous page
+      />
+        <h2 className="ml-2 text-2xl font-bold text-gray-800">ADD FUND</h2>
       </div>
 
       {/* User Info */}
@@ -65,6 +77,8 @@ const AddFund = () => {
       >
         Pay Now
       </button>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

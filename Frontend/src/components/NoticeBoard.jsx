@@ -1,10 +1,13 @@
 import { FaWhatsapp } from "react-icons/fa";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const NoticeBoard = () => {
   return (
-    <div className="max-w-md mx-auto bg-white min-h-screen p-4">
+    <div className="">
+      <Header/>
+      <div className="max-w-md mx-auto pt-24 pb-20 bg-white min-h-screen p-4">
       <header className="flex items-center space-x-2 pb-4 border-b">
-        <button className="text-gray-700 text-xl">&#8592;</button>
         <h2 className="text-lg font-semibold">NOTICE BOARD</h2>
       </header>
       
@@ -39,6 +42,8 @@ const NoticeBoard = () => {
           If admin finds any cheating, hacking, or phishing, admin has all rights to take necessary actions to block the user.
         </p>
       </section>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

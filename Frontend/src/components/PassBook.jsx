@@ -1,4 +1,6 @@
 import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const transactions = [
   {
@@ -19,12 +21,11 @@ const transactions = [
 
 const Passbook = () => {
   return (
-    <div className="min-h-screen bg-white p-4">
+    <div className="">
+      <Header/>
+    <div className="min-h-screen py-24 bg-white p-4">
       {/* Header */}
-      <div className="flex items-center justify-between p-3 bg-white shadow-md rounded-lg">
-        <button className="text-gray-700 text-xl">
-          <FaArrowLeft />
-        </button>
+      <div className=" text-center p-3 bg-white shadow-md rounded-lg">
         <h2 className="text-lg font-semibold">PASSBOOK</h2>
         <div className="w-6" /> {/* Empty div for spacing */}
       </div>
@@ -60,6 +61,8 @@ const Passbook = () => {
           Next <FaChevronRight className="ml-2" />
         </button>
       </div>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

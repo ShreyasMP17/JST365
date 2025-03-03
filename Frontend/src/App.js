@@ -30,6 +30,7 @@ import BidHistory from './components/BidHistory';
 import NotFound from './components/404NotFound';
 import WithdrawHistory from './components/WithdrawHistory';
 import GameResultHistory from './components/GameResultHistory';
+import StarlineResultHistory from './components/StarlineResultHistory';
 
 
 
@@ -61,7 +62,7 @@ function App() {
         <Route path="/withdraw-history" element={<WithdrawHistory />} />
         <Route path="/bid-history" element={<BidHistory />} />
         <Route path="/game-result-history" element={<GameResultHistory />} />
-        <Route path="/starline-result-history" element={<GameResultHistory />} />
+        <Route path="/starline-result-history" element={<StarlineResultHistory />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

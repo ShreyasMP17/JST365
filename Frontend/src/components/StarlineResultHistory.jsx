@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const StarlineResultHistory = () => {
   // State for selected date
@@ -21,14 +23,20 @@ const StarlineResultHistory = () => {
     "08:30 PM",
     "09:30 PM",
   ];
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-6">
+    <div className="">
+      <Header/>
+    <div className="min-h-screen py-24 bg-gray-100 px-4 ">
       {/* Header Section */}
       <div className="flex items-center space-x-3 mb-4">
-        <Link to="/" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-          <ArrowLeft className="text-gray-700" size={24} />
-        </Link>
+        {/* Clickable Arrow Button */}
+      <ArrowLeft
+        className="text-gray-700  cursor-pointer hover:text-gray-900 transition"
+        size={24}
+        onClick={() => navigate(-1)} // Go back to previous page
+      />
         <h2 className="text-lg font-semibold text-gray-800">STARLINE RESULT HISTORY</h2>
       </div>
 
@@ -55,6 +63,8 @@ const StarlineResultHistory = () => {
           </div>
         ))}
       </div>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

@@ -1,15 +1,16 @@
 import React from "react";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const ChangeMPIN = () => {
   return (
+    <div className="">
+      <Header/>
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
       {/* Header */}
       <div className="w-full max-w-md">
         <div className="flex items-center space-x-2 py-4">
-          <button className="p-2 rounded-full bg-gray-200">
-            ←
-          </button>
-          <h2 className="text-lg font-semibold">Change MPIN</h2>
+          <h2 className="text-lg  items-center font-semibold">Change MPIN</h2>
         </div>
 
         {/* Input Fields */}
@@ -36,6 +37,8 @@ const ChangeMPIN = () => {
           Update
         </button>
       </div>
+      </div>
+      <NavbarBottom/>
     </div>
   );
 };

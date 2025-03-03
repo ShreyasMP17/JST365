@@ -1,12 +1,14 @@
 import React from "react";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const HowToPlay = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <div className="max-w-lg mx-auto bg-white p-4 rounded-lg shadow-lg">
-        <button className="flex items-center space-x-2 text-gray-600 mb-4">
-          <span className="text-lg">&#8592;</span>
-          <span className="font-semibold">HOW TO PLAY</span>
+    <div className="min-h-screen bg-gray-100  ">
+      <Header/>
+      <div className="max-w-lg pt-24  pb-24 mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <button className="flex items-center space-x-2 mb-4">
+          <span className="font-semibold text-2xl ">HOW TO PLAY</span>
         </button>
         
         <div className="mb-6">
@@ -24,6 +26,7 @@ const HowToPlay = () => {
           </p>
         </div>
       </div>
+      <NavbarBottom/>
     </div>
   );
 };

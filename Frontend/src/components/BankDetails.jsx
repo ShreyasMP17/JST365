@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { ArrowLeft, Wallet } from "lucide-react";
+import NavbarBottom from "./NavbarBottom";
+import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 
 const BankDetails = () => {
   const [form, setForm] = useState({
@@ -13,19 +16,20 @@ const BankDetails = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+  const navigate = useNavigate();
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 px-4 py-6">
-      {/* Header */}
-      <div className="w-full flex items-center justify-between mb-4">
-        <div className="flex items-center">
-          <ArrowLeft className="text-gray-700 cursor-pointer" size={24} />
-          <h2 className="ml-2 text-lg font-semibold text-gray-800">BANK DETAILS</h2>
-        </div>
-        <div className="flex items-center bg-black text-white px-3 py-1 rounded-full">
-          <Wallet size={18} className="mr-1" />
-          <span className="text-sm font-semibold">₹99.0</span>
-        </div>
+    <div className="">
+      <Header/>
+    <div className="min-h-screen py-24 flex flex-col items-center bg-gray-100 px-4 ">
+      
+      <div className="w-full items-center text-center mb-4">
+        {/* Header */}
+      <ArrowLeft
+        className="text-gray-700  cursor-pointer hover:text-gray-900 transition"
+        size={32}
+        onClick={() => navigate(-1)} // Go back to previous page
+      />
+          <h2 className="ml-2 text-lg font-bold text-gray-800">BANK DETAILS</h2>
       </div>
 
       {/* Bank Form */}
@@ -55,6 +59,8 @@ const BankDetails = () => {
       <button className="mt-6 w-full max-w-md bg-orange-500 text-white text-lg font-semibold py-3 rounded-lg shadow-md">
         Add Bank
       </button>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

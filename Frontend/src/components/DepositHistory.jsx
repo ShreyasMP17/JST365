@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Heading } from "lucide-react";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
+import { useNavigate } from "react-router-dom";
 
 const DepositHistory = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
   const transactions = [
     {
       date: "27/02/2025 07:06:19 PM",
@@ -31,12 +33,23 @@ const DepositHistory = () => {
     },
   ];
 
+
+  const navigate = useNavigate();
+ 
+
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 px-4 py-6">
+    <div className="">
+      <Header/>
+    <div className="min-h-screen py-24 flex flex-col items-center bg-gray-100 px-4 ">
       {/* Header */}
-      <div className="w-full flex items-center justify-start mb-4">
-        <ArrowLeft className="text-gray-700 cursor-pointer" size={24} />
-        <h2 className="ml-2 text-lg font-semibold text-gray-800">DEPOSIT HISTORY</h2>
+      <div className="w-full flex items-center justify-between mb-4">
+         {/* Header */}
+  <ArrowLeft
+  className="text-gray-700  cursor-pointer hover:text-gray-900 transition"
+  size={32}
+  onClick={() => navigate(-1)} // Go back to previous page
+/>
+        <h2 className="ml-2 text-lg font-semibold ">DEPOSIT HISTORY</h2>
       </div>
 
       {/* Transactions List */}
@@ -87,6 +100,8 @@ const DepositHistory = () => {
           Next
         </button>
       </div>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

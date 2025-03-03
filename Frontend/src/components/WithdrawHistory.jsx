@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const WithdrawHistory = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,12 +35,11 @@ const WithdrawHistory = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 px-4 py-6">
+    <div className="">
+      <Header/>
+    <div className="min-h-screen py-24 flex flex-col items-center bg-gray-100 px-4 ">
       {/* Header */}
-      <div className="w-full flex items-center justify-start mb-4">
-        <Link to="/" className="p-2 rounded-full hover:bg-gray-200">
-          <ArrowLeft className="text-gray-700 cursor-pointer" size={24} />
-        </Link>
+      <div className="w-full flex items-center justify-center mb-4">
         <h2 className="ml-2 text-lg font-semibold text-gray-800">WITHDRAW HISTORY</h2>
       </div>
 
@@ -94,6 +95,8 @@ const WithdrawHistory = () => {
           Next
         </button>
       </div>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

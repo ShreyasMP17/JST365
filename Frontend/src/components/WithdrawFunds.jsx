@@ -1,22 +1,32 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import PopWithdrawFunds from "./PopupTerms";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
+import { useNavigate } from "react-router-dom";
 
 const WithdrawFunds = () => {
   const [amount, setAmount] = useState("");
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 px-4 py-6">
+    <div className="">
+      <Header/>
+    <div className=" pt-24 items-center bg-gray-100 px-4 ">
+    <ArrowLeft
+        className="text-gray-700  cursor-pointer hover:text-gray-900 transition"
+        size={32}
+        onClick={() => navigate(-1)} // Go back to previous page
+      />
       {/* Header */}
-      <div className="w-full flex items-center justify-start mb-4">
-        <ArrowLeft className="text-gray-700 cursor-pointer" size={24} />
-        <h2 className="ml-2 text-lg font-semibold text-gray-800">WITHDRAW FUNDS</h2>
+      <div className="w-full mb-4">
+        <h2 className="ml-2 text-center text-2xl font-semibold ">WITHDRAW FUNDS</h2>
       </div>
 
       {/* User Info */}
       <div className="w-full max-w-md bg-orange-500 text-white rounded-xl p-4 text-center">
         <h3 className="text-lg font-semibold">Hunk</h3>
-        <p className="text-sm">+917019401035</p>
+        <p className="text-sm">+91 1234567890</p>
         <div className="bg-black text-white p-2 mt-2 rounded-lg">
           <p className="text-sm">Available Balance</p>
           <p className="text-lg font-bold">₹99.0</p>
@@ -42,6 +52,8 @@ const WithdrawFunds = () => {
         Send Request
       </button>
       <PopWithdrawFunds/>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

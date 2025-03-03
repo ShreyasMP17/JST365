@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { ArrowLeft, Filter } from "lucide-react";
+import NavbarBottom from "./NavbarBottom";
+import Header from "./Header";
+import {  useNavigate } from "react-router-dom";
 
 const BidHistory = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 2; // Set number of items per page
+  const navigate = useNavigate();
 
   const bids = [
     {
@@ -41,14 +45,21 @@ const BidHistory = () => {
   const paginatedBids = bids.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 px-4 py-6">
+    <div className="">
+      <Header/>
+    <div className="min-h-screen py-24 flex flex-col items-center bg-gray-100 px-4 ">
       {/* Header */}
       <div className="w-full flex items-center justify-between mb-4">
-        <div className="flex items-center">
-          <ArrowLeft className="text-gray-700 cursor-pointer" size={24} />
-          <h2 className="ml-2 text-lg font-semibold text-gray-800">BID HISTORY</h2>
-        </div>
-        <Filter className="text-gray-700 cursor-pointer" size={24} />
+      <div className="flex items-center">
+      {/* Clickable Arrow Button */}
+      <ArrowLeft
+        className="text-gray-700  cursor-pointer hover:text-gray-900 transition"
+        size={24}
+        onClick={() => navigate(-1)} // Go back to previous page
+      />
+      <h2 className="ml-2 text-lg font-semibold text-gray-800">BID HISTORY</h2>
+    </div>
+        <Filter className="text-orange-500 cursor-pointer" size={24} />
       </div>
 
       {/* Bid Entries */}
@@ -120,6 +131,8 @@ const BidHistory = () => {
           Next
         </button>
       </div>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };

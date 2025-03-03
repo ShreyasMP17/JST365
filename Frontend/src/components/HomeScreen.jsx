@@ -186,7 +186,7 @@ const HomeScreen = () => {
     </div>
 
 {/* Add padding to avoid overlap with fixed header */}
-<div className=" pt-36  "></div>
+<div className=" pt-44  "></div>
 
       {/* Game List */}
       <div className="flex-1 p-4 space-y-4">

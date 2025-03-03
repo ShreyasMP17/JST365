@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Wallet, Landmark, History, Download, Upload } from "lucide-react";
+import Header from "./Header";
+import NavbarBottom from "./NavbarBottom";
 
 const AddFunds = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="">
+      <Header/>
+    <div className="min-h-screen  py-24 ">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 bg-white shadow-md">
-        <Link to="/" className="p-2 rounded-full hover:bg-gray-200">
-          <ArrowLeft size={24} />
-        </Link>
-        <h1 className="text-lg font-semibold">FUNDS</h1>
-        <div className="flex items-center space-x-2 bg-gray-900 text-white px-3 py-1 rounded-full">
-          <Wallet size={18} />
-          <span className="text-sm font-medium">₹99.0</span>
-        </div>
+      <div className=" p-4 ">
+       
+        <h1 className=" text-2xl text-center font-bold">FUNDS</h1>
+        
       </div>
 
       {/* Funds Options */}
@@ -24,6 +23,8 @@ const AddFunds = () => {
         <FundsOption icon={<History size={24} />} text="Deposit History" link="/deposit-history" />
         <FundsOption icon={<Download size={24} />} text="Withdraw History" link="/withdraw-history" />
       </div>
+    </div>
+    <NavbarBottom/>
     </div>
   );
 };
